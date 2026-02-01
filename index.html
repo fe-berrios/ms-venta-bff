@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras | Pago Webpay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-tools"></i>
+                    <span>FERREMAS</span>
+                </div>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <div class="cart-count">3</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Tu Carrito de Compras</h1>
+        
+        <div class="cart-container">
+            <!-- Lista de productos en el carrito -->
+            <div class="cart-items">
+                <div class="cart-item">
+                    <div class="item-image">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-name">Caja de Clavos</div>
+                        <div class="item-description">Caja de clavos galvanizados de 3 pulgadas (100 unidades)</div>
+                        <div class="item-price">$3.500</div>
+                        <div class="item-quantity">
+                            <button class="quantity-btn" data-index="0" data-change="-1">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <span class="quantity" id="quantity-0">2</span>
+                            <button class="quantity-btn" data-index="0" data-change="1">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <div class="item-total" id="item-total-0">$7.000</div>
+                        </div>
+                        <button class="remove-item" data-index="0">
+                            <i class="fas fa-trash"></i> Eliminar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="cart-item">
+                    <div class="item-image">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-name">Martillo de Carpintero</div>
+                        <div class="item-description">Martillo profesional con mango de fibra de vidrio</div>
+                        <div class="item-price">$5.000</div>
+                        <div class="item-quantity">
+                            <button class="quantity-btn" data-index="1" data-change="-1">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <span class="quantity" id="quantity-1">1</span>
+                            <button class="quantity-btn" data-index="1" data-change="1">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <div class="item-total" id="item-total-1">$5.000</div>
+                        </div>
+                        <button class="remove-item" data-index="1">
+                            <i class="fas fa-trash"></i> Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Resumen del pedido -->
+            <div class="cart-summary">
+                <div class="summary-title">Resumen del Pedido</div>
+                
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$12.000</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span>Envío</span>
+                    <span>$0</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span>Descuento</span>
+                    <span id="discount">$0</span>
+                </div>
+                
+                <div class="summary-total">
+                    <span>Total</span>
+                    <span id="total">$12.000</span>
+                </div>
+                
+                <button class="checkout-btn" id="checkoutBtn">
+                    <i class="fas fa-lock"></i> PAGAR PEDIDO
+                </button>
+                
+                <div class="promo-code">
+                    <div class="summary-row">
+                        <span>Código promocional</span>
+                    </div>
+                    <div class="promo-input">
+                        <input type="text" id="promo-code" placeholder="Ingresa tu código">
+                        <button class="promo-btn" id="applyPromoBtn">Aplicar</button>
+                    </div>
+                </div>
+                
+                <div class="webpay-logo">
+                    Pago seguro con <strong>Webpay Plus</strong>
+                </div>
+                
+                <div id="message" class="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay de carga -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Procesando tu pago con Webpay...</div>
+    </div>
+
+    <!-- Contenedor para formularios ocultos de Webpay -->
+    <div id="formularioOculto" style="display: none;"></div>
+
+    <footer class="container">
+        <p>© 2023 Ferretería Online. Todos los derechos reservados.</p>
+        <p>Compra 100% segura con Webpay Plus de Transbank</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
