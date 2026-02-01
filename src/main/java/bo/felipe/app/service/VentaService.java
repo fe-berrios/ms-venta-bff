@@ -1,15 +1,11 @@
 package bo.felipe.app.service;
 
 import bo.felipe.app.client.IBusinessC;
+import bo.felipe.app.model.StatusResponse;
 import bo.felipe.app.model.VentaRequest;
 import bo.felipe.app.model.VentaResponse;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class VentaService {
@@ -21,5 +17,8 @@ public class VentaService {
         return iBusinessC.addVenta(nuevaVenta);
     }
 
+    public StatusResponse statusVenta(String token_ws){
+        return iBusinessC.statusVenta(token_ws);
+    }
 
 }
