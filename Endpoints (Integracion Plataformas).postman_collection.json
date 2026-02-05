@@ -1,0 +1,349 @@
+{
+  "info": {
+    "_postman_id": "cd80ea09-4d05-4700-a1aa-a7b88469035f",
+    "name": "Endpoints (Integracion Plataformas)",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51492124",
+    "_collection_link": "https://go.postman.co/collection/51492124-cd80ea09-4d05-4700-a1aa-a7b88469035f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "(CRUD) createVenta",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Tbk-Api-Key-Id",
+            "value": "597055555532",
+            "type": "text"
+          },
+          {
+            "key": "Tbk-Api-Key-Secret",
+            "value": "579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"buy_order\": \"ordenCompra12345678\",\r\n \"session_id\": \"sesion1234557545\",\r\n \"amount\": 10000,\r\n \"return_url\": \"http://www.comercio.cl/webpay/retorno\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/add/venta",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "add",
+            "venta"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "(CRUD)  getVentas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8083/db/ventas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "db",
+            "ventas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "(CRUD) getVentaById",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8083/db/venta/40",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "db",
+            "venta",
+            "40"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "(CRUD)  deleteVenta",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8083/db/delete/venta/45",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "db",
+            "delete",
+            "venta",
+            "45"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "(CRUD)  updateVenta",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "    {\r\n        \"buyOrder\": \"ordenCompra12345678\",\r\n        \"sessionId\": \"sesion1234557545\",\r\n        \"amount\": 25000,\r\n        \"returnUrl\": \"http://www.comercio.cl/webpay/retorno\",\r\n        \"token\": \"01ab147e45a22246f8a8a10cfb6e27e9838b610b4dc34b292bbd747010649501\",\r\n        \"url\": \"https://webpay3gint.transbank.cl/webpayserver/initTransaction\",\r\n        \"status\": \"AUTHORIZED\",\r\n        \"authorization_code\": null\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8083/db/update/venta/orden_1769886118537",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "db",
+            "update",
+            "venta",
+            "orden_1769886118537"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "(WEBPAY) crearTransaccion",
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Tbk-Api-Key-Id",
+            "value": "597055555532",
+            "type": "text"
+          },
+          {
+            "key": "Tbk-Api-Key-Secret",
+            "value": "579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"buy_order\": \"ordenCompra12345678\",\r\n \"session_id\": \"sesion1234557545\",\r\n \"amount\": 10000,\r\n \"return_url\": \"http://www.comercio.cl/webpay/retorno\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/add/venta",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "add",
+            "venta"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "(WEBPAY) confirmarTransaccion",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Tbk-Api-Key-Id",
+            "value": "597055555532",
+            "type": "text"
+          },
+          {
+            "key": "Tbk-Api-Key-Secret",
+            "value": "579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"buy_order\": \"ordenCompra12345678\",\r\n \"session_id\": \"sesion1234557545\",\r\n \"amount\": 10000,\r\n \"return_url\": \"http://www.comercio.cl/webpay/retorno\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8082/confirm/venta/01ab5cc6c2f29cea86cababce4aba6f31517f380976c5631bc0aa6cf61be5769",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "confirm",
+            "venta",
+            "01ab5cc6c2f29cea86cababce4aba6f31517f380976c5631bc0aa6cf61be5769"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "(WEBPAY) obtenerEstadoTransaccion",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Tbk-Api-Key-Id",
+            "value": "597055555532",
+            "type": "text"
+          },
+          {
+            "key": "Tbk-Api-Key-Secret",
+            "value": "579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"buy_order\": \"ordenCompra12345678\",\r\n \"session_id\": \"sesion1234557545\",\r\n \"amount\": 10000,\r\n \"return_url\": \"http://www.comercio.cl/webpay/retorno\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8082/status/venta/FERRETERIA_1769975467466",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "status",
+            "venta",
+            "FERRETERIA_1769975467466"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "(WEBPAY) reversarPago",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Tbk-Api-Key-Id",
+            "value": "597055555532",
+            "type": "text"
+          },
+          {
+            "key": "Tbk-Api-Key-Secret",
+            "value": "579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"amount\": 12000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/refund/venta/01abebc1644b2ae6afd8697ad0eab31eaeee9f7cf92aa1a7433710f311999d5b",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "refund",
+            "venta",
+            "01abebc1644b2ae6afd8697ad0eab31eaeee9f7cf92aa1a7433710f311999d5b"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "(WEBPAY) capturarTransaccion",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Tbk-Api-Key-Id",
+            "value": "597055555532",
+            "type": "text"
+          },
+          {
+            "key": "Tbk-Api-Key-Secret",
+            "value": "579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"buy_order\": \"FERRETERIA_1769979883025\",\r\n  \"authorization_code\": \"1213\",\r\n  \"capture_amount\": 12000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/capture/venta/01abebc1644b2ae6afd8697ad0eab31eaeee9f7cf92aa1a7433710f311999d5b",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "capture",
+            "venta",
+            "01abebc1644b2ae6afd8697ad0eab31eaeee9f7cf92aa1a7433710f311999d5b"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
